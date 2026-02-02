@@ -1,8 +1,8 @@
 # AWS Tools — SQS Batcher
 
 ![Python Version](https://img.shields.io/badge/python-3.10%2B-blue)
-![PyPI](https://img.shields.io/pypi/v/aws-tools?label=PyPI%20Package)
-![CI](https://github.com/satyap/aws-tools/actions/workflows/ci.yml/badge.svg)
+![PyPI](https://img.shields.io/pypi/v/aws-python-boto-tools?label=PyPI%20Package)
+![CI](https://github.com/satyap/aws-python-boto-tools/actions/workflows/ci.yml/badge.svg)
 
 A Python utility for batching and sending messages to AWS SQS with size- and count-aware flushing, context management, retries, and optional success callbacks.
 
@@ -22,12 +22,12 @@ A Python utility for batching and sending messages to AWS SQS with size- and cou
 
 ### From PyPI (once published)
 
-`pip install aws-tools`
+`pip install aws-python-boto-tools`
 
 ### From source
 
-git clone [https://github.com/satyap/aws-tools.git](https://github.com/satyap/aws-tools.git)
-cd aws-tools
+git clone [https://github.com/satyap/aws-python-boto-tools.git](https://github.com/satyap/aws-python-boto-tools.git)
+cd aws-python-boto-tools
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -e .

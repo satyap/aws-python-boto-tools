@@ -1,7 +1,7 @@
 # General
 
 [project]
-name = "aws-tools"
+name = "aws-python-boto-tools"
 version = "0.0.1"
 description = "Utilities for SQS batch, STS assume-role cache, and CloudWatch logging"
 readme = "README.md"
@@ -31,7 +31,7 @@ build = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/satyap/aws-tools.git"
+Homepage = "https://github.com/satyap/aws-python-boto-tools.git"
 
 [project.scripts]
 
