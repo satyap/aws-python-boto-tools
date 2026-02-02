@@ -1,0 +1,3 @@
+.coverage
+**/__pycache__/
+src/aws_tools.egg-info/
