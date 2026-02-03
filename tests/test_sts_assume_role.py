@@ -127,7 +127,7 @@ def test_recursive_intermediate_roles():
         session_name="TestSession",
         intermediate_role_arn=intermediate_arn_2,
         duration_seconds=900,
-        session=session  # passing the session from previous intermediate
+        session=session,  # passing the session from previous intermediate
     )
 
     # Intermediate role 2 should also be cached
@@ -182,7 +182,7 @@ def test_recursive_intermediate_roles():
         session_name="TestSession",
         intermediate_role_arn=intermediate_arn_2,
         duration_seconds=900,
-        session=session  # passing the session from previous intermediate
+        session=session,  # passing the session from previous intermediate
     )
 
     # Check that the intermediate role 2 and target role are cached together
@@ -215,14 +215,12 @@ def test_existing_session_usage():
     mock_sts_client = mock.Mock()
     mock_session.client.return_value = mock_sts_client
     creds = {
-        'AccessKeyId': 'TEMPACCESSKEY',
-        'SecretAccessKey': 'TEMPSECRETKEY',
-        'SessionToken': 'TEMPTOKEN',
-        'Expiration': datetime.now() + timedelta(hours=1)
+        "AccessKeyId": "TEMPACCESSKEY",
+        "SecretAccessKey": "TEMPSECRETKEY",
+        "SessionToken": "TEMPTOKEN",
+        "Expiration": datetime.now() + timedelta(hours=1),
     }
-    mock_sts_client.assume_role.return_value = {
-        'Credentials': creds
-    }
+    mock_sts_client.assume_role.return_value = {"Credentials": creds}
 
     session = get_session(
         target_role_arn=target_arn,
@@ -230,11 +228,9 @@ def test_existing_session_usage():
         duration_seconds=900,
         session=mock_session,
     )
-    assert session.get_credentials().access_key == creds['AccessKeyId']  # same creds implies same session, probably
+    assert session.get_credentials().access_key == creds["AccessKeyId"]  # same creds implies same session, probably
 
-    mock_session.client.assert_called_once_with('sts')
+    mock_session.client.assert_called_once_with("sts")
     mock_sts_client.assume_role.assert_called_once_with(
-        RoleArn=target_arn,
-        RoleSessionName="TestSession",
-        DurationSeconds=900
+        RoleArn=target_arn, RoleSessionName="TestSession", DurationSeconds=900
     )
