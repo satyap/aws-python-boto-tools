@@ -1,0 +1,15 @@
+botocore
+boto3
+
+[build]
+setuptools
+wheel
+
+[testing]
+black
+coverage
+moto[sqs]
+mypy
+pytest
+pytest-cov
+pytest-mock

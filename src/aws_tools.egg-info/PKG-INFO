@@ -1,0 +1,33 @@
+Metadata-Version: 2.4
+Name: aws-python-boto-tools
+Version: 0.0.1
+Summary: Utilities for SQS batch, STS assume-role cache, and CloudWatch logging
+Author-email: Your Name <you@example.com>
+Project-URL: Homepage, https://github.com/satyap/aws-python-boto-tools.git
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+License-File: LICENSE-human.txt
+Requires-Dist: botocore
+Requires-Dist: boto3
+Provides-Extra: testing
+Requires-Dist: black; extra == "testing"
+Requires-Dist: coverage; extra == "testing"
+Requires-Dist: moto[sqs]; extra == "testing"
+Requires-Dist: mypy; extra == "testing"
+Requires-Dist: pytest; extra == "testing"
+Requires-Dist: pytest-cov; extra == "testing"
+Requires-Dist: pytest-mock; extra == "testing"
+Provides-Extra: build
+Requires-Dist: setuptools; extra == "build"
+Requires-Dist: wheel; extra == "build"
+Dynamic: license-file
+
+# AWS utilities
+
+A collection of Python packages for:
+
+* Sending SQS messages in batches (efficient for cost and compute)
+* Using STS assume-role with an in-memory cache
+* Logging to CloudWatch from Python programs in JSON format
+
