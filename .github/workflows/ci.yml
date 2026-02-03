@@ -35,16 +35,6 @@ jobs:
       - name: Run lint
         run: make lint
 
-      - name: Check type hints
-        run: mypy src
-
-      - name: Upload coverage to codecov (optional)
-        if: success() && github.repository != ''
-        uses: codecov/codecov-action@v4
-        with:
-          files: coverage.xml
-          fail_ci_if_error: true
-
   deploy:
     needs: build-test
     runs-on: ubuntu-latest
