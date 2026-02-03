@@ -1,9 +1,5 @@
 # AWS Tools — SQS Batcher
 
-![Python Version](https://img.shields.io/badge/python-3.10%2B-blue)
-![PyPI](https://img.shields.io/pypi/v/aws-python-boto-tools?label=PyPI%20Package)
-![CI](https://github.com/satyap/aws-python-boto-tools/actions/workflows/ci.yml/badge.svg)
-
 A Python utility for batching and sending messages to AWS SQS with size- and count-aware flushing, context management, retries, and optional success callbacks.
 
 ---
