@@ -26,12 +26,13 @@ A Python utility for batching and sending messages to AWS SQS with size- and cou
 
 ### From source
 
+```shell
 git clone [https://github.com/satyap/aws-python-boto-tools.git](https://github.com/satyap/aws-python-boto-tools.git)
 cd aws-python-boto-tools
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -e .
-
+```
 ---
 
 ## Quick Start
@@ -44,11 +45,11 @@ sqs = boto3.client("sqs", region_name="us-east-1")
 queue_url = "[https://sqs.us-east-1.amazonaws.com/123456789012/my-queue](https://sqs.us-east-1.amazonaws.com/123456789012/my-queue)"
 
 def on_success(message_ids):
-print("Successfully sent messages:", message_ids)
+    print("Successfully sent messages:", message_ids)
 
 with SQSBatcher(queue_url, sqs_client=sqs, on_success=on_success) as batcher:
-batcher.add_message("Hello World", attributes={"foo": {"DataType": "String", "StringValue": "bar"}})
-batcher.add_message("Another message", attributes={"count": {"DataType": "Number", "StringValue": "42"}})
+  batcher.add_message("Hello World", attributes={"foo": {"DataType": "String", "StringValue": "bar"}})
+  batcher.add_message("Another message", attributes={"count": {"DataType": "Number", "StringValue": "42"}})
 ```
 ---
 
@@ -58,10 +59,10 @@ You can supply a custom retry function instead of the default exponential backof
 
 ```python
 def linear_retry(attempt: int) -> float:
-return 0.5 * attempt  # wait 0.5s, 1s, 1.5s, ...
+    return 0.5 * attempt  # wait 0.5s, 1s, 1.5s, ...
 
 with SQSBatcher(queue_url, sqs_client=sqs, backoff_factor=0, retry_policy=linear_retry) as batcher:
-batcher.add_message("Retry test")
+    batcher.add_message("Retry test")
 ```
 ---
 
