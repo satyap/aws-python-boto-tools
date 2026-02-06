@@ -57,7 +57,11 @@ Homepage = "https://github.com/satyap/aws-python-boto-tools.git"
 
 [build-system]
 # Build system configuration (PEP 518)
-requires = ["setuptools", "wheel"]
+requires = [
+  "setuptools",
+  "setuptools-scm",
+  "wheel",
+]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
