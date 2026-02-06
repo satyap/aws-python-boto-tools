@@ -2,7 +2,12 @@ import boto3
 import pytest
 from unittest.mock import Mock
 
-from src.sqs_batch_send import SQSBatcher, APPROX_AWS_METADATA_OVERHEAD, MAX_BATCH_COUNT, MAX_BATCH_SIZE
+from src.aws_python_boto_tools.sqs_batch_send import (
+    SQSBatcher,
+    APPROX_AWS_METADATA_OVERHEAD,
+    MAX_BATCH_COUNT,
+    MAX_BATCH_SIZE,
+)
 from moto import mock_aws
 
 # ---------------------------------------------------------------------

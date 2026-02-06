@@ -5,7 +5,7 @@ from unittest import mock
 import pytest
 import boto3
 from moto import mock_aws
-from src.sts_assume_role import get_session, configure_cache, _STS_CACHE
+from src.aws_python_boto_tools.sts_assume_role import get_session, configure_cache, _STS_CACHE
 
 
 # ----------------------

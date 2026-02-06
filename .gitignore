@@ -1,3 +1,4 @@
+**/aws_python_boto_tools.egg-info/
+build
 .coverage
 **/__pycache__/
-src/aws_python_boto_tools.egg-info/
