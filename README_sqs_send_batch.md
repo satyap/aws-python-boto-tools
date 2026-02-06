@@ -60,28 +60,3 @@ def linear_retry(attempt: int) -> float:
 with SQSBatcher(queue_url, sqs_client=sqs, backoff_factor=0, retry_policy=linear_retry) as batcher:
     batcher.add_message("Retry test")
 ```
----
-
-## Testing
-
-`pytest --cov=src --cov-report=term-missing tests/`
-
-* Uses moto to mock AWS SQS
-* Type-checked with mypy: mypy src tests
-
----
-
-## Development & Contributing
-
-* Fork the repo
-* Create a feature branch
-* Write tests for new functionality
-* Submit a pull request
-
----
-
-## License
-
-See the [LICENSE](LICENSE) file for details
-
----

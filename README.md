@@ -8,3 +8,29 @@ A collection of Python packages for:
 
 * [Sending SQS messages in batches (efficient for cost and compute)](README_sqs_send_batch.md)
 * [Using STS assume-role with an in-memory LRU cache](README_sts_assume_role.md)
+
+---
+
+## Testing
+
+`make test`
+
+* Uses moto to mock AWS SQS
+* Type-checked with mypy: mypy src tests
+
+---
+
+## Development & Contributing
+
+* Fork the repo
+* Create a feature branch
+* Write tests for new functionality
+* Submit a pull request
+
+---
+
+## License
+
+See the [LICENSE](LICENSE) file for details
+
+---
