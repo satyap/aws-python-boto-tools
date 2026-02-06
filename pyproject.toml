@@ -6,12 +6,29 @@ version = "0.0.3"
 description = "Utilities for SQS batch, STS assume-role cache, and CloudWatch logging"
 readme = "README.md"
 license-files = ["LICENSE", "LICENSE-human.txt"]
-authors = [
-  { name = "Your Name", email = "you@example.com" }
-]
 requires-python = ">=3.10"
+license = "CC-BY-SA-4.0"
+
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Software Development :: Libraries",
+  "Topic :: System :: Systems Administration",
+]
+keywords = [
+  "aws",
+  "boto3",
+  "sqs",
+  "sts",
+  "aws-sdk",
+]
+
+
 dependencies = [
-  "botocore",
   "boto3",
 ]
 
@@ -47,10 +64,6 @@ package-dir = { "" = "src" }
 
 [tool.setuptools.packages.find]
 where = ["src"]
-
-[tool.setuptools.package-data]
-# Tell setuptools to include non-code resourecs.
-"image_manipulation" = ["tmpl.html"]
 
 # Tools
 
